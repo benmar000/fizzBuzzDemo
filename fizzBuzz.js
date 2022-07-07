@@ -1,8 +1,9 @@
 const { isDivisible } = require("./isDivisible");
 
-const fizzBuzz = () => {
+const fizzBuzz = (length) => {
+  const collection = [];
   let i = 1;
-  while (i <= 100) {
+  while (i <= length) {
     let result = "";
     if (isDivisible(i, 3)) {
       result = "Fizz";
@@ -13,9 +14,10 @@ const fizzBuzz = () => {
     if (result === "") {
       result = i;
     }
-    console.log(result);
+    collection.push(result);
     i++;
   }
+  return collection;
 };
 
 module.exports = { fizzBuzz };
